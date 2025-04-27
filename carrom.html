@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>HTML5 Canvas Carrom with javascript</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+</head>
+
+<body class="bodybgblue">
+	<canvas id="effects" width="100%" height="100%">Your browser does not support the HTML5 canvas tag.</canvas>
+	<div id="container">
+		<div id="msgs">
+			<div id="msgbox">Welcome!</div>
+		</div>
+		<div class="row" style="margin: 0px;padding: 0px; position: relative;height: 615px;">
+			<div style="text-align: center;">
+				<canvas id="bg" width="520" height="520">Your browser does not support the HTML5 canvas tag.</canvas>
+				<canvas id="Carrom" width="520" height="520">Your browser does not support the HTML5 canvas
+					tag.</canvas>
+				<canvas id="Striker" width="520" height="520">Your browser does not support the HTML5 canvas
+					tag.</canvas>
+				<div class="jumbotron one">
+					<h3><b>Player 1</b></h3>
+					<p><b>Score: <span id="0">0</span></b></p>
+				</div>
+				<div class="jumbotron two">
+					<h3><b>Player 2</b></h3>
+					<p><b>Score: <span id="1">0</span></b></p>
+				</div>
+			</div>
+			<div class="title">
+				<h1>C</h1>
+				<h1>A</h1>
+				<h1>R</h1>
+				<h1>R</h1>
+				<h1>O</h1>
+				<h1>M</h1>
+			</div>
+			<div class="controls">
+				<h3>Options</h3>
+				<div class="con">
+					<div class="b b4" id="config">
+						<img src="./assets/images/help.svg" width="29" height="29" />
+					</div>
+					<div class="s">
+						<img id="s1" src="./assets/images/s1.svg" width="29" height="29" />
+					</div>
+				</div>
+				<h4>Board</h4>
+				<div class="con">
+					<div class="b b1 active"></div>
+					<div class="b b2"></div>
+					<div class="b b3"></div>
+				</div>
+				<h4>Flower</h4>
+				<div class="con">
+					<div class="g g1 active" style="background-color: #ebdfc3;">
+						<img src="./assets/images/windRose.svg" width="31" height="31" />
+					</div>
+					<div class="g g2" style="background-color: #ebdfc3;">
+						<img src="./assets/images/windRose1.svg" width="31" height="31" />
+					</div>
+				</div>
+
+				<h4>Background</h4>
+				<div class="con">
+					<div class="bg bg1 blue active"></div>
+					<div class="bg bg2 black"></div>
+					<div class="bg bg3 imgbg"></div>
+					<div class="bg bg4 imgbg1"></div>
+				</div>
+
+
+			</div>
+			<div id="popup" class="popup">
+				<h2>Game Over</h2>
+				<h1 class="t">Congratulations</h1>
+				<h3>Player <span id="w1">1</span> wins</h3>
+				<a href="javascript:void(0)" id="playAgain" class="myButton2">Play Again</a>
+			</div>
+
+			<div id="popup2" class="popup popup2">
+				<img id="u2simg" class="active" src="./assets/images/u2s.svg" />
+				<img id="u2uimg" src="./assets/images/u2u.svg" />
+				<a href="javascript:void(0)" id="start2" class="myButton2">Start</a>
+			</div>
+
+			<div id="popup1" class="popup">
+				<h2>Game Guide</h2>
+				<div id="msgs1">
+					<ul>
+						<li><img src="./assets/images/black.png" />10 <img src="./assets/images/white.png" />20 <img src="./assets/images/red.png" />50 </li>
+						<li>Move striker with mouse.</li>
+						<li>Click to place.</li>
+						<li>Press escape to reposition.</li>
+						<li>After placing move mouse towards player side.</li>
+						<li>Click to hit.</li>
+						<li>Hitting blue highlighted coins attract penalty.</li>
+					</ul>
+				</div>
+				<a href="javascript:void(0)" id="start" class="myButton2">Start</a>
+			</div>
+		</div>
+		<!-- <img id="source" src="b1.jpeg" style="display: none;" /> -->
+		<img id="cc" src="./assets/images/cc.jpg" style="display: none;" />
+
+		<script type="text/javascript" src="js/shapeFunc.js"></script>
+		<script type="text/javascript" src="js/boardSetup.js"></script>
+		<script type="text/javascript" src="js/coinFunc.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="js/rain.js"></script>
+		<script type="text/javascript">
+			var c = document.getElementById("Carrom");
+			var rect = c.getBoundingClientRect();
+
+			var coinSize = 10;
+
+			// canvasCalls();
+			initializePlayers(2);
+		</script>
+	</div>
+</body>
+
+</html>
